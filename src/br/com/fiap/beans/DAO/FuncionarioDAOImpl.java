@@ -9,7 +9,6 @@ public class FuncionarioDAOImpl implements FuncionarioDAO {
 
     private EntityManager em;
 
-    // Construtor recebendo o EntityManager
     public FuncionarioDAOImpl(EntityManager em) {
         this.em = em;
     }
@@ -19,12 +18,12 @@ public class FuncionarioDAOImpl implements FuncionarioDAO {
     }
 
     public void atualizar(Funcionario funcionario) throws IdNaoEncontradoException {
-        buscar(funcionario.getId()); // Valida se existe antes de atualizar
+        buscar(funcionario.getId()); 
         em.merge(funcionario);
     }
 
     public void deletar(Long id) throws IdNaoEncontradoException {
-        Funcionario funcionario = buscar(id); // Busca o objeto gerenciado
+        Funcionario funcionario = buscar(id);
         em.remove(funcionario);
     }
 
@@ -42,7 +41,7 @@ public class FuncionarioDAOImpl implements FuncionarioDAO {
             em.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
-            em.getTransaction().rollback(); // Desfaz a transação em caso de erro
+            em.getTransaction().rollback();
             throw new CommitException();
         }
     }
