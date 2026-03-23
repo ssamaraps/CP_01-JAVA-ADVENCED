@@ -1,10 +1,10 @@
-package br.com.fiap.beans.entity; // Mantive o pacote que está no seu print
+package br.com.fiap.beans.entity; 
 
-import javax.persistence.Entity; // Mudamos de jakarta para javax!
+import javax.persistence.Entity; 
 import javax.persistence.Id;
 
 @Entity
-public class Freelancer extends Funcionario { // Ajustei o nome para casar com o arquivo
+public class Freelancer extends Funcionario { 
 
     public Long getId() {
         return id;
