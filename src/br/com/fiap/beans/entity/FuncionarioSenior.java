@@ -15,10 +15,8 @@ public class FuncionarioSenior extends Funcionario {
 
     @Override
     public double calcularSalario() {
-        // Salário base: horas * valorHora
         double salarioBase = super.calcularSalario();
 
-        // Lógica do bônus: a cada 15 horas completas, ganha o bônus
         int quantidadeDeBonus = getHorasTrabalhadas() / 15;
         double bônusTotal = quantidadeDeBonus * valorBonusPorPeriodo;
 
